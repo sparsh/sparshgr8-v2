@@ -1,0 +1,24 @@
+<div class="work-tile-parent">
+  <div [@flipInY]='flipInY' *ngIf="changed" (mouseenter)='onMouseEnterWorkTile(index)'  (mouseleave)='onMouseLeaveWorkTile(index)' class="work-tile">
+    <md-card
+      style="overflow:hidden;text-overflow:ellipsis;background-color:transparent;margin:0%!important" 
+      class="work-tile-not-hovered" 
+      *ngIf="front">
+   
+      <img class="img-circle" [src]="work.iconUrl">
+      <div style="overflow:hidden;text-overflow:ellipsis;margin-top:3%;flex-grow:1;color:black">{{work.title}}</div>
+      <div style="overflow:hidden;text-overflow:ellipsis;margin-top:2%;flex-grow:1;color:black">{{work.platform}}</div>
+   
+    </md-card>
+
+    <div 
+     class="work-tile-hovered" 
+     [style.background]="resource.colors[index%resource.colors.length]"
+      *ngIf="!front">
+    
+        <div>{{work.title}}</div>
+        <div style=" margin-top:15px; max-height: 20.0em;  line-height: 2em;overflow:hidden;text-overflow:ellipsis" [innerHtml]= "work.description"> </div>
+    
+    </div>
+  </div>
+</div>

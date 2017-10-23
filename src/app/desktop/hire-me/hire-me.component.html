@@ -1,0 +1,69 @@
+<md-card>
+
+  <font class="font-primary" size="6">Hire Sparsh</font>
+  <div style="display:flex;flex-direction:column" [formGroup]="hireForm">
+    <md-divider></md-divider>
+
+  <md-input-container class="font-size-medium-and-padding">
+      <input formControlName="name" [(ngModel)]="hire.name" mdInput [placeholder]="resource.name" />
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['name'].valid && clicked">  {{resource.validText}} {{resource.name}} </span>
+      </div>
+    </md-input-container>
+
+      <md-input-container class="font-size-medium-and-padding">
+      <input formControlName="email" [(ngModel)]="hire.email" mdInput [placeholder]="resource.email" />
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['email'].valid && clicked">  {{resource.validText}} {{resource.email}} </span>
+      </div>
+    </md-input-container>
+  
+    <md-input-container class="font-size-medium-and-padding">
+      <input formControlName="projectTitle" [(ngModel)]="hire.projectTitle" mdInput [placeholder]="resource.projectTitle" />
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['projectTitle'].valid && clicked">  {{resource.validText}} {{resource.projectTitle}} </span>
+      </div>
+    </md-input-container>
+
+
+    <md-input-container class="font-size-medium-and-padding">
+      <textarea mdInput formControlName="message" [(ngModel)]="hire.message" [placeholder]="resource.hireMessage"></textarea>
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['message'].valid && clicked">  {{resource.validText}} {{resource.hireMessageHeading}} </span>
+      </div>
+    </md-input-container>
+
+
+
+    <md-input-container class="font-size-medium-and-padding">
+      <input mdInput formControlName="platform" [(ngModel)]="hire.platform" [placeholder]="resource.platform" />
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['platform'].valid && clicked">  {{resource.validText}} {{resource.platform}} </span>
+      </div>
+    </md-input-container>
+    
+    <div style="width:100%" class="font-size-medium-and-padding">
+      <md-select class="font-primary" style="width:100%" formControlName="paymentType" placeholder="Payment Type" [(ngModel)]="hire.paymentType">
+        <md-option *ngFor="let type of resource.priceType" [value]="type.value">
+          {{type.display}}
+        </md-option>
+      </md-select>
+
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['paymentType'].valid && clicked">  {{resource.validText}} Price Type </span>
+      </div>
+    </div>
+    <md-input-container class="font-size-medium-and-padding" *ngIf="hire.paymentType != null" class="font-size-medium-and-padding">
+      <input type="number" mdInput formControlName="amount" [(ngModel)]="hire.amount" [placeholder]="hire.paymentType == 'per hour' ? 'Payment in One Hour (in USD)': 'Total Payment (in USD)'"
+      />
+      <div class="errorMessage">
+        <span *ngIf="!hireForm.controls['amount'].valid && clicked">  {{resource.validText}} Payment </span>
+      </div>
+    </md-input-container>
+
+
+    <div class="font-size-medium-and-padding">
+      <button color="primary" (click)="submitContactValuesToServer(hire)" md-raised-button>Submit</button>
+    </div>
+  </div>
+</md-card>

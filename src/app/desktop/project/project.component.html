@@ -1,0 +1,8 @@
+<div style="width:100%" class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12" style="max-height:400px;margin-top:10px;margin-bottom:10px;" (click)="openWorkDetails(work)"
+      *ngFor="let work of workDetailsArray|async;let index=index">
+      <app-project-tile (click)="openWorkDetails(work)" [index] = "index" [work] = "work" ></app-project-tile>
+    </div>
+  </div>
+</div>

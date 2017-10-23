@@ -1,0 +1,31 @@
+<md-card>
+
+  <font class="font-primary" size="6">Contact Sparsh</font>
+  <div style="display:flex;flex-direction:column" [formGroup]="contactForm">
+    <md-divider></md-divider>
+    <md-input-container class="font-size-medium-and-padding">
+      <textarea mdInput formControlName="message" [(ngModel)]="contact.message" [placeholder]="resource.contactMessagehint"></textarea>
+      <div class="errorMessage">
+        <span *ngIf="!contactForm.controls['message'].valid && clicked">  {{resource.validText}} {{resource.contactMessageHeading}} </span>
+      </div>
+    </md-input-container>
+
+
+    <md-input-container class="font-size-medium-and-padding">
+      <input formControlName="fullName" [(ngModel)]="contact.fullName" mdInput [placeholder]="resource.fullName" />
+      <div class="errorMessage">
+        <span *ngIf="!contactForm.controls['fullName'].valid && clicked">  {{resource.validText}} {{resource.fullName}} </span>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="font-size-medium-and-padding">
+      <input mdInput formControlName="email" [(ngModel)]="contact.email" [placeholder]="resource.emailHint" />
+      <div class="errorMessage">
+        <span *ngIf="!contactForm.controls['email'].valid && clicked">  {{resource.validText}} {{resource.emailHeading}} </span>
+      </div>
+    </md-input-container>
+    <div class="font-size-medium-and-padding">
+      <button color="primary" (click)="submitContactValuesToServer(contact)" md-raised-button>Submit</button>
+    </div>
+  </div>
+</md-card>

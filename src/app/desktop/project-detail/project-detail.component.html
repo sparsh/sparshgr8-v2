@@ -1,0 +1,84 @@
+<md-card *ngIf="project.title != null" style="align-items:center;">
+    <div class="font-primary row">
+
+        <div class="col-md-7 margin" style="line-height: 2em;height:100%;text-align:left;display:flex;flex-direction:column">
+
+            <div style="display:flex;align-items:center">
+
+                <i class="bg-gradient-clicked" (click)="goback()" style="cursor: pointer;" class="material-icons">keyboard_backspace</i>
+
+                <font class="bg-gradient-clicked" style="margin-left:1%" size="4">{{project.title}}</font>
+            </div>
+
+            <div style=" line-height: 2em; font-size:1.2em;margin-top:1%" [innerHtml]="project.description"></div>
+        </div>
+
+        <div class="col-md-4 margin" style="display:flex;flex-direction:column;">
+             <font  style="margin-top:1%;margin-bottom:1%" size="5">{{resource.specifications}}</font>
+           
+            <div style="text-align:center;" class="font-primary">
+                <div style="width:100%;display:flex;flex-direction:row;margin-bottom:3%">
+                    <div style="text-align:left;width:100%;display:flex;flex-direction:column">
+
+                        <font size="4">Role</font>
+
+                        <font size="3">{{project.Role}}</font>
+
+                    </div>
+                    <div style="width:100%;display:flex;flex-direction:column">
+
+                        <font size="4">Time</font>
+
+                        <font size="3">{{project.duration}}</font>
+                    </div>
+
+                </div>
+                <div class="marginTop" class="bg-gradient-clicked">
+                </div>
+
+                <div class="marginTop" style="width:100%;display:flex;flex-direction:row;margin-bottom:2%">
+
+                    <div style="width:100%;display:flex;flex-direction:column">
+
+                        <font size="4">Platform</font>
+
+                        <font size="3">{{project.platform}}</font>
+                    </div>
+
+                </div>
+                <div class="marginTop" class="bg-gradient-clicked">
+                </div>
+
+
+                <div class="marginTop" style="width:100%;display:flex;flex-direction:row">
+                    <div style="width:100%;display:flex;flex-direction:column;margin-bottom:3%">
+
+                        <font size="4">Skill Level</font>
+
+                        <font size="3">{{project.skill_level}}</font>
+
+                    </div>
+
+                </div>
+                <div class="marginTop" class="bg-gradient-clicked">
+                </div>
+                <div style="margin-bottom:3%" class="marginTop">
+                    <font size="4">Features</font>
+                    <div class="row">
+                        <div class="col-md-5 margin" style="height:50px" *ngFor="let feature of project.features;let index=index">
+                            <div style="display:flex;flex-direction:row;width:100%">
+                                <i class="material-icons">{{feature.image}}</i>
+                                <font style="margin-left:2%">{{feature.name}}</font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="marginTop" class="bg-gradient-clicked">
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</md-card>

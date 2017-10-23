@@ -1,0 +1,25 @@
+<div style="width:100%" class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4 col-sm-12 col-xs-12 square" style="max-height:400px;margin-top:10px;margin-bottom:10px;" *ngFor="let client of clientFeedbackDetailsArray | async;let index=index">
+
+      <div class="work-tile-parent">
+        <div class="work-tile">
+
+          <div class="work-tile-hovered" style="flex-direction:row;display: flex;align-items: center;"  [style.background]="resource.colors[index%resource.colors.length]">
+              <div style="flex-direction:column;display: flex;">
+            <div style=" flex-grow:1;">{{client.name}}</div>
+            <!--<div style=" flex-grow:1;" >{{client.From}}</div>-->
+            <div style="flex-grow:1; margin-top:1%;display:flex;flex-direction:row">
+              <div *ngFor="let i of getArray(client.stars)">
+                <i style="margin-left:1%" class="material-icons">star</i>
+              </div>
+            </div>
+            <div style="max-height: 18.0em;  line-height: 2em;flex-grow:8;overflow:hidden;text-overflow:ellipsis;color:#fafafa" [innerHtml]="client.comment">
+            </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

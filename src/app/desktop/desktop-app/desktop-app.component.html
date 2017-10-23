@@ -1,0 +1,81 @@
+<div class="bg-gradient" style="position:fixed">
+</div>
+
+<md-card class="home-card">
+  <div class="container">
+    <div class="row">
+      <font class="col-md-5 col-sm-10 col-xs-10 clickable font-primary" (click)="showSelectedTabData(1)" size="5">Sparsh Jain</font>
+      <font class="col-md-3 col-sm-7  col-xs-10 font-primary  oval-text" (click)="mail()" size="4">Sparshgr8@yahoo.com</font>
+      <font class="col-md-2 col-sm-3  col-xs-10 font-primary  oval-text" (click)="routeNavigate('hire')" size="4">Hire me!</font>
+      <!--<font (click)="routeNavigate('chat')" class="font-primary  oval-text" size="4">Chat</font>-->
+      <!--<button md-icon-button [mdMenuTriggerFor]="menu">
+    <i style="margin-left:1%" class="material-icons">more_vert</i>
+</button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+
+          <span>Login</span>
+      
+  </button>
+      <button md-menu-item >
+    <span>Logout</span>
+  </button>
+
+    </md-menu>-->
+
+    </div>
+  </div>
+  <div (click)="showSelectedTabData(1)" class="clickable name-and-quote">
+    <font size="6">Front end developer.</font>
+    <font size="6">High Quality, Quick Delivery.</font>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1 col-sm-3 col-lg-1 col-xs-4 oval-image" style="text-align:center" *ngFor="let r; of resource.technologiesArray | myShowFrontPipe:showFront;let index = index">
+        <div (click)="technologyClick(index)" style="justify-content: center;align-items: center;text-align: center;display:flex;flex-direction:column;" tooltip="hover" tooltipPosition="above">
+          <img height="50px" [src]="r.path" />
+          <font style="margin-top:5px" size="3">{{r.text}}</font>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card-header">
+    <!--<md-tab-group  color="priamry"  (selectChange)="showSelectedTabData($event.index)"  class="extra-padding-right font-primary">
+      <md-tab color="priamry" [label] = "r.toolbarTitle" class="extra-padding-right font-primary" *ngFor="let r of resource.toolbarIconsArray;let index = index">
+          
+      </md-tab>
+
+    </md-tab-group>-->
+<div id = "tabs" style="width:100%;margin-top:2%;margin-bottom:2%" class="row">
+    <div (click)="showSelectedTabData(index)" class="clickable col-lg-3 font-primary" *ngFor="let r of resource.toolbarIconsArray;let index = index">
+      <div *ngIf="index == selectedTab" class="bg-gradient-clicked">
+        <font size="5">{{r.toolbarTitle}}</font>
+      </div>
+      <div *ngIf="index != selectedTab">
+        <font size="5">{{r.toolbarTitle}}</font>
+      </div>
+    </div>
+</div>
+  </div>
+
+  <md-progress-bar *ngIf="showProgress" mode="query">
+  </md-progress-bar>
+  <!--<md-card [@myTabAnimation]='state' style="background-color:#fafafa">
+      <router-outlet></router-outlet>
+    </md-card>-->
+  <div style="margin-top:2%;margin-bottom:2%" [@myTabAnimation]='state'>
+    <router-outlet></router-outlet>
+  </div>
+  <!--<div style="width:100%;display:flex;flex-direction:row">
+    <div align="left" style="flex-grow:1" *ngFor="let social of resource.aboutSocialDetailsArray"> 
+    <img  class="socialMediaIcons" (click)="openLink(social.link)" [src]="social.path" >
+    </div>
+  </div>-->
+
+</md-card>

@@ -1,0 +1,246 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Didact+Gothic|Monda');
+@import 'angular-material-demo-theme.scss';
+
+
+
+
+.bg-gradient-clicked{
+    border-bottom: 2px solid #02ccba;
+    
+}
+.margin
+{
+    margin:1%;
+}
+.extra-padding-right
+{
+    padding-right: 8%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+    cursor:pointer;
+
+}
+
+
+@media only screen and (max-width: 480px) {
+   .home-card
+{
+
+  background-color: transparent !important;
+ color:white;
+
+}
+
+.bg-gradient{
+    content: '';
+    width: 100%;
+    height:100%;
+    z-index: -1000;
+    background-image: linear-gradient(160deg,#02ccba 0,#0091EA 50%,#02ccba 100%);
+    transform-origin: left bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+   .home-card
+{
+
+  background-color: transparent !important;
+
+color:white;
+
+}
+
+.bg-gradient{
+    content: '';
+    width: 100%;
+    height:100%;
+    z-index: -1000;
+    background-image: linear-gradient(160deg,#02ccba 0,#0091EA 50%,#02ccba 100%);
+    transform-origin: left bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .home-card
+{
+
+  background-color: transparent !important;
+   margin-left: 10%;
+color:white;
+    margin-right: 10%;
+    margin-top: 4%;
+    margin-bottom: 10%;
+
+}
+
+.bg-gradient{
+    content: '';
+    width: 100%;
+    height:95%;
+    z-index: -1000;
+    background-image: linear-gradient(160deg,#02ccba 0,#0091EA 50%,#02ccba 100%);
+    transform-origin: left bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skew(0deg,-5deg);
+}
+}
+@media only screen and (min-width: 959px) {
+   .home-card
+{
+
+  background-color: transparent !important;
+   margin-left: 10%;
+color:white;
+    margin-right: 10%;
+    margin-top: 4%;
+    margin-bottom: 10%;
+
+}
+
+.bg-gradient{
+    content: '';
+    width: 100%;
+    height:90%;
+    z-index: -1000;
+    background-image: linear-gradient(160deg,#02ccba 0,#0091EA 50%,#02ccba 100%);
+    transform-origin: left bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skew(0deg,-5deg);
+}
+
+}
+.left-corner{
+    padding-right: 8%;
+    margin-bottom: 2%;
+    margin-left: 1%
+
+}
+
+
+.left-corner-small-gap{
+    padding-right: 2%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    margin-top:3%;
+
+
+}
+
+.img-circle {
+height: 245px;
+width: 245px;
+border-radius: 50%;
+}
+.clickable 
+{
+    cursor: pointer;
+}
+.work-tile
+{   cursor: pointer;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+height: 350px;
+width: 350px;
+}
+
+.work-tile-parent
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;width:100%;height:100%
+}
+.work-tile-hovered{
+
+  
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    color: white;
+    padding:10%;
+}
+
+
+
+.work-tile-not-hovered{
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:100%;
+    text-align: center;
+
+}
+.card-header
+{
+    padding-top: 3% !important;
+    display:flex;
+    overflow-x: scroll;
+    flex-direction:row
+}
+.font-primary
+{
+font-family: 'Didact Gothic', sans-serif !important
+}
+
+.name-and-quote
+{
+    display:flex;
+    flex-direction:column;
+    margin-top: 3%;
+    font-family: 'Monda', serif ;
+    margin-bottom: 1%;
+}
+.oval-text
+{
+    border: 2px solid;
+    padding-right: 3%;
+    padding-left: 3%;
+    border-radius: 25px;
+    margin: 1%;
+    padding-top:0.5%;
+    padding-bottom:0.5%;
+        cursor:pointer;
+}
+.oval-image
+{
+    border: 2px solid;
+    padding: 1%;
+    border-radius: 12px;
+    margin: 2%;
+    cursor:pointer;
+}
+
+
+.socialMediaIcons
+{
+    background :mat-color($primary) !important;
+}
+
+.errorMessage
+{
+    position: absolute;
+      color:  mat-color($warn) ;
+      margin-top: 10px;
+      font-size:0.63em;
+
+}
+.font-size-medium-and-padding
+{
+        margin-top: 5%;
+      font-size:1.3em;
+
+font-family: 'Didact Gothic', sans-serif !important
+}
